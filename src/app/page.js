@@ -46,7 +46,8 @@ const projects = [
   {
     title: "Chat Application",
     stack: "MERN Stack",
-    image: "/p1.png",
+    image:
+      "https://images.unsplash.com/photo-1505424297051-c3ad50b055ae?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description: "Real-time chat application with comprehensive features",
     points: [
       "Developed user registration, authentication, and real-time communication using Socket.io",
@@ -55,13 +56,14 @@ const projects = [
       "Secured data using JWT and MongoDB for scalable storage",
     ],
     tech: ["MongoDB", "Express.js", "React", "Node.js", "Socket.io", "JWT"],
-    demo: "https://chat-app.demo",
+    demo: "https://example.com/chat-app",
     github: "https://github.com/username/chat-app",
   },
   {
     title: "Uber Clone",
     stack: "MERN Stack",
-    image: "/p1.png",
+    image:
+      "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fHRlY2hub2xvZ3l8ZW58MHx8MHx8fDA%3D",
     description: "Full-featured ride-booking platform",
     points: [
       "Created real-time location tracking and route calculation using Google Maps API",
@@ -77,7 +79,7 @@ const projects = [
       "Google Maps API",
       "Leaflet JS",
     ],
-    demo: "https://uber-clone.demo",
+    demo: "https://example.com/uber-clone",
     github: "https://github.com/username/uber-clone",
   },
 ];
