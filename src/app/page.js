@@ -182,17 +182,22 @@ export default function Page() {
                     icon: "🛠️",
                     skills: [
                       "ReactJs",
+                      "NextJS",
                       "ExpressJs",
+                      "NodeJS",
                       "Framer JS",
                       "GSAP",
-                      "Scroll Trigger",
-                      "Leaflet JS",
                     ],
                   },
                   {
                     category: "UI Tools",
                     icon: "🎨",
-                    skills: ["Headless UI", "Tailwind CSS", "Bootstrap"],
+                    skills: [
+                      "Headless UI",
+                      "Tailwind CSS",
+                      "Bootstrap",
+                      "schadcn",
+                    ],
                   },
                   {
                     category: "Databases",
@@ -207,12 +212,18 @@ export default function Page() {
                   {
                     category: "Tools",
                     icon: "🔧",
-                    skills: ["VScode", "IntelliJ IDEA", "Git", "Github"],
+                    skills: [
+                      "VScode",
+                      "IntelliJ IDEA",
+                      "Git",
+                      "Github",
+                      "MS Excel",
+                    ],
                   },
                   {
                     category: "Problem Solving",
                     icon: "🧩",
-                    skills: ["Data Structures", "Algorithms", "Leetcode 100+"],
+                    skills: ["Data Structures", "Algorithms", "Leetcode 200+"],
                   },
                 ].map((category) => (
                   <motion.div
