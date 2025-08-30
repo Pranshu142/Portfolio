@@ -39,7 +39,7 @@ const Header = () => {
   };
 
   return (
-    <div className="w-full px-5 pt-5 text-white flex justify-between gap-2 items-center font-serif border-b-2 border-gray-800 pb-5 sticky top-0 bg-black/80 backdrop-blur-sm">
+    <div className="w-full px-5 pt-5 text-white flex justify-between gap-2 items-center font-serif border-b-3 border-gray-500 pb-5 sticky top-0 bg-gray-800/20 bgagrey-950    backdrop-blur-lg z-20">
       <div className="font-bold w-full">Pranshu Pandey</div>
 
       {/* This is the navigation menu that will be animated */}
