@@ -1,10 +1,13 @@
 import { ReactLenis } from "lenis/react";
 import HomePage from "./pages/HomePage";
+import PortfolioProvider from "./context/PortfolioProvider";
 
 const App = () => {
   return (
     <ReactLenis root>
-      <HomePage />
+      <PortfolioProvider>
+        <HomePage />
+      </PortfolioProvider>
     </ReactLenis>
   );
 };
