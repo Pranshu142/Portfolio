@@ -24,7 +24,7 @@ const AboutMe = () => {
     },
   ];
   return (
-    <div className="text-white tracking-tight flex flex-col items-center gap-8 pb-5">
+    <div className="text-white tracking-tight flex flex-col items-center gap-8 pb-5 sm:px-10">
       <div className="flex flex-col items-center  justify-center gap-4 mt-10 text-center text-gray-400  ">
         <div className="px-4 py-1 border-1 rounded-2xl text-sm bg-gray-950 font-bold  ">
           <span className="text-gray-200">About me</span>
@@ -58,17 +58,17 @@ const AboutMe = () => {
           excited to take on new challenges and learn emerging technologies.
         </p>
       </div>
-      <div className="flex flex-col gap-6 items-start w-full">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2  w-full">
         {cardObj.map((val, idx) => (
           <div
             key={idx}
-            className="flex flex-col items-center gap-2 w-full border-1 border-white/30 px-3 text-center py-2 rounded-2xl bg-gray-950"
+            className="flex flex-col items-center gap-2 p-4 text-center border border-white/30 rounded-2xl bg-gray-950"
           >
-            <div className="p-2 hover:bg-gray-700 rounded-2xl transition-all ease-in-out duration-75">
+            <div className="p-2 rounded-2xl transition-all ease-in-out duration-75 hover:bg-gray-700">
               <val.icon size={32} className="stroke-3" />
             </div>
-            <div className = "text-gray-200">{val.title}</div>
-            <div className = "text-gray-400 text-sm">{val.description}</div>
+            <div className="text-gray-200">{val.title}</div>
+            <div className="text-gray-400 text-sm">{val.description}</div>
           </div>
         ))}
       </div>

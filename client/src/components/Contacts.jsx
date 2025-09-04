@@ -22,7 +22,7 @@ const Contacts = () => {
     },
   ];
   return (
-    <div className="flex flex-col items-center gap-8">
+    <div className="flex flex-col items-center gap-8 sm:px-10">
       <div className="flex flex-col items-center justify-center gap-4 mt-10 text-center text-gray-400">
         <div className="px-4 py-1 border-1 rounded-2xl text-sm bg-gray-950 font-bold">
           <span className="text-gray-200">Get in Touch</span>

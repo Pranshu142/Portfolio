@@ -1,61 +1,86 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const Header = () => {
   const headerItems = ["Home", "About", "Skills", "Projects", "Contacts"];
-  const navRoutes = React.useRef(null);
-  const [isNavOpen, setIsNavOpen] = React.useState(false);
+  const navRoutes = useRef(null);
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
-  // This hook now only controls the animation for the navigation links
   useGSAP(() => {
-    if (isNavOpen) {
-      // Animate nav links IN
-      gsap.to(navRoutes.current, {
-        display: "flex",
-        opacity: 1,
-        y: 0,
-        duration: 0.3,
-        ease: "power2.inOut",
-      });
-    } else {
-      // Animate nav links OUT
-      gsap.to(navRoutes.current, {
-        opacity: 0,
-        y: -20,
-        duration: 0.3,
-        ease: "power2.inOut",
-        // Hide the element after the animation is complete for better performance
-        onComplete: () => {
-          gsap.set(navRoutes.current, { display: "none" });
-        },
-      });
+    // Mobile only animation
+    if (window.innerWidth < 768) {
+      if (isNavOpen) {
+        gsap.fromTo(
+          navRoutes.current,
+          { display: "none", opacity: 0, y: -20 },
+          {
+            display: "flex",
+            opacity: 1,
+            y: 0,
+            duration: 0.3,
+            ease: "power2.inOut",
+          }
+        );
+      } else {
+        gsap.to(navRoutes.current, {
+          opacity: 0,
+          y: -20,
+          duration: 0.3,
+          ease: "power2.inOut",
+          onComplete: () => gsap.set(navRoutes.current, { display: "none" }),
+        });
+      }
     }
   }, [isNavOpen]);
 
-  const togglePannel = () => {
-    setIsNavOpen((prev) => !prev);
-  };
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        gsap.set(navRoutes.current, {
+          clearProps: "all", // saare inline styles remove karega (display, opacity, transform, etc.)
+        });
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Run once on mount
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const togglePannel = () => setIsNavOpen((prev) => !prev);
 
   return (
-    <div className="w-full px-5 pt-5 text-white flex justify-between gap-2 items-center font-serif border-b-3 border-gray-500 pb-5 sticky top-0 bg-gray-800/20 bgagrey-950    backdrop-blur-lg z-20">
-      <div className="font-bold w-full">Pranshu Pandey</div>
+    <div className="w-full px-5 pt-5 text-white flex justify-between items-center font-serif border-b border-gray-500 pb-5 sticky top-0 bg-gray-800/20 backdrop-blur-lg z-20">
+      <div className="font-bold">Pranshu Pandey</div>
 
-      {/* This is the navigation menu that will be animated */}
+      {/* Navigation */}
       <div
-        className="hidden absolute top-full right-5 mt-2 bg-gray-900 p-5 rounded-lg shadow-lg gap-4 flex-col opacity-0"
         ref={navRoutes}
+        className="hidden md:flex flex-col md:flex-row gap-4 absolute md:static top-full right-5 mt-2 md:mt-0 p-5 md:p-0 rounded-lg md:rounded-none shadow-lg md:shadow-none bg-gray-800/90 md:bg-transparent"
       >
         {headerItems.map((val, idx) => (
-          <div key={idx} className="cursor-pointer w-full hover:text-gray-300">
+          <a
+            key={idx}
+            href={`#${val.toLowerCase()}`}
+            className="cursor-pointer w-full hover:text-gray-300"
+          >
             {val}
-          </div>
+          </a>
         ))}
       </div>
 
-      {/* Toggle button - This component doesn't need to be animated */}
-      <div className="z-20 cursor-pointer" onClick={togglePannel}>
+      {/* Toggle Button */}
+      <div
+        className="z-20 cursor-pointer md:hidden"
+        onClick={togglePannel}
+        aria-expanded={isNavOpen}
+        aria-controls="nav-menu"
+      >
         {isNavOpen ? <X /> : <Menu />}
       </div>
     </div>
