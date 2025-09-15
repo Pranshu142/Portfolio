@@ -14,7 +14,7 @@ const HomePage = () => {
       <main>
         <section
           id="home"
-          className="relative min-h-screen flex  items-center justify-center  overflow-hidden"
+          className="relative min-h-screen flex  items-center justify-center  overflow-hidden section-1"
         >
           <Hero badges={badges} />
         </section>
