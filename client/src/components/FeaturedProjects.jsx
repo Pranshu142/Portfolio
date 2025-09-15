@@ -1,4 +1,4 @@
-import { Github } from "lucide-react";
+import { Github, ExternalLink } from "lucide-react";
 
 const FeaturedProjects = () => {
   const projects = [
@@ -52,8 +52,8 @@ const FeaturedProjects = () => {
     },
   ];
   return (
-    <div className="flex flex-col items-center gap-8 sm:px-10">
-      <div className="flex flex-col items-center  justify-center gap-4 mt-10 text-center text-gray-400  ">
+    <div className="flex flex-col items-center gap-8">
+      <div className="flex flex-col items-center  justify-center gap-4 mt-10 text-center text-gray-400 md:justify-start  ">
         <div className="px-4 py-1 border-1 rounded-2xl text-sm bg-gray-950 font-bold  ">
           <span className="text-gray-200">Featured Projects</span>
         </div>
@@ -64,28 +64,50 @@ const FeaturedProjects = () => {
           opportunity.
         </p>
       </div>
-      <div className="text-white tracking-tight flex flex-col items-center gap-8 pb-5 w-full">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((val, idx) => (
           <div
             key={idx}
-            className="flex flex-col items-center gap-4 w-full border-1 border-white/30 text-start rounded-2xl bg-gray-950"
+            className="flex flex-col gap-4 overflow-hidden text-start text-gray-300  bg-gray-950 border border-white/30 rounded-2xl"
           >
-            <div className="overflow-hidden rounded-t-2xl h-48 w-full">
+            <div className="w-full h-48 overflow-hidden relative group">
               <img
-                src={`${val.image}`}
-                className="object-cover h-full w-full object-center"
-                alt=""
+                src={val.image}
+                className="object-cover object-center w-full h-full transition-transform duration-300 ease-in-out group-hover:scale-110"
+                alt={val.title}
               />
+              <div className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out bg-black/60 bg-opacity-50 opacity-0 group-hover:opacity-100">
+                <div className="flex gap-4">
+                  <a
+                    href={val.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-3 py-1 text-white transition-colors duration-200 ease-in-out bg-gray-950 rounded-xl border border-white/20 hover:bg-gray-800"
+                  >
+                    <Github size={20} />
+                    <span>Code</span>
+                  </a>
+                  <a
+                    href={val.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-3 py-1 text-black transition-colors duration-200 ease-in-out bg-white rounded-xl hover:bg-gray-200"
+                  >
+                    <ExternalLink size={20} />
+                    <span>Live</span>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div className="text-gray-300 font-normal px-3 py-2 space-y-3">
-              <h3 className="text-gray-200 w-full font-bold">{val.title}</h3>
-              <p>{val.description}</p>
+            <div className="flex flex-col gap-2 px-4 py-2">
+              <h3 className="text-xl font-bold text-gray-200">{val.title}</h3>
+              <p className="text-sm">{val.description}</p>
             </div>
-            <div className="flex gap-3 flex-wrap items-center justify-center  px-3 py-2 ">
+            <div className="flex flex-wrap gap-2 px-4 py-2 mb-4">
               {val.technologies.map((value, index) => (
                 <div
                   key={index}
-                  className="px-3 py-1 bg-gray-800 rounded-xl text-sm font-bold"
+                  className="px-3 py-1 text-xs font-bold bg-gray-800 rounded-full"
                 >
                   {value}
                 </div>
@@ -94,7 +116,7 @@ const FeaturedProjects = () => {
           </div>
         ))}
       </div>
-      <div className = "text-white font-bold flex gap-2 items-center bg-gray-800 rounded-lg px-3 py-2 mb-5 w-full justify-center">
+      <div className="text-white font-bold flex gap-2 items-center bg-gray-800 rounded-lg px-3 py-2 mb-5 w-full justify-center">
         <div>
           <Github />
         </div>

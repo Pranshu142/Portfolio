@@ -55,8 +55,8 @@ const Skills = () => {
     "Webpack",
   ];
   return (
-    <div className="text-white tracking-tight flex flex-col items-center gap-8 pb-5 sm:px-10">
-      <div className="flex flex-col items-center  justify-center gap-4 mt-10 text-center text-gray-400  ">
+    <div className="text-white tracking-tight flex flex-col items-center gap-8">
+      <div className="flex flex-col items-center  justify-center gap-4 mt-10 text-center text-gray-400 md:mt-8  ">
         <div className="px-4 py-1 border-1 rounded-2xl text-sm bg-gray-950 font-bold  ">
           <span className="text-gray-200">Skills and Technologies</span>
         </div>
@@ -67,7 +67,7 @@ const Skills = () => {
           ideas to life
         </p>
       </div>
-      <div className="flex flex-col gap-8 items-start w-full">
+      <div className="grid  md:grid-cols-3 gap-8 w-full">
         {skillCategories.map((val, idx) => (
           <div
             key={idx}
@@ -77,7 +77,7 @@ const Skills = () => {
             {val.skills.map((value, index) => (
               <div
                 key={index}
-                className="p-2 hover:bg-gray-700 rounded-2xl transition-all ease-in-out duration-75 w-full"
+                className=" p-2 rounded-2xl  duration-100 w-full space-y-1 md:text-sm md:space-y-2"
               >
                 <div className="flex justify-between">
                   <h3>{value.name}</h3>
@@ -96,7 +96,7 @@ const Skills = () => {
           </div>
         ))}
       </div>
-      <div className="text-gray-200 font-bold w-full flex flex-col gap-8 justify-center  items-center">
+      <div className="text-gray-200 font-bold w-full flex flex-col gap-8 justify-center  items-center md:mt-9">
         <h2 className="text-2xl  ">Technology I use</h2>
         <div className="flex flex-wrap gap-2 justify-center items-center">
           {technologies.map((tech, idx) => (

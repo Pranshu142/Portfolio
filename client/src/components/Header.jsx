@@ -54,8 +54,24 @@ const Header = () => {
 
   const togglePannel = () => setIsNavOpen((prev) => !prev);
 
+  const handleScrollIntoViewHeader = (e, idx) => {
+    e.preventDefault();
+    const ele = document.getElementById(`${idx}`);
+    if (ele) {
+      ele.scrollIntoView({
+        behavior: "smooth",
+        inline: "nearest",
+        block: "start",
+      });
+    }
+
+    if (window.innerWidth < 768) {
+      setIsNavOpen(false);
+    }
+  };
+
   return (
-    <div className="w-full px-5 pt-5 text-white flex justify-between items-center font-serif border-b border-gray-500 pb-5 sticky top-0 bg-gray-800/20 backdrop-blur-lg z-20">
+    <div className="w-full px-5 pt-5 text-white flex justify-between items-center font-serif border-b border-gray-500 pb-5 fixed top-0 left-0 right-0 bg-gray-800/20 backdrop-blur-lg z-20">
       <div className="font-bold">Pranshu Pandey</div>
 
       {/* Navigation */}
@@ -68,6 +84,7 @@ const Header = () => {
             key={idx}
             href={`#${val.toLowerCase()}`}
             className="cursor-pointer w-full hover:text-gray-300"
+            onClick={(e) => handleScrollIntoViewHeader(e, val.toLowerCase())}
           >
             {val}
           </a>

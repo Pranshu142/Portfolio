@@ -12,19 +12,34 @@ const HomePage = () => {
     <div className="min-h-screen bg-gray-950">
       <Header />
       <main>
-        <section className=" min-h-screen px-3 py-5 w-full relative section-1">
+        <section
+          id="home"
+          className="relative min-h-screen flex  items-center justify-center  overflow-hidden"
+        >
           <Hero badges={badges} />
         </section>
-        <section className="bg-gray-900 w-full min-h-screen px-4 section-2">
+        <section
+          id="about"
+          className="bg-gray-900 w-full  px-4 section-2 py-20"
+        >
           <AboutMe />
         </section>
-        <section className="bg-gray-950 w-full min-h-screen px-4 section-3">
+        <section
+          id="skills"
+          className="bg-gray-950 w-full px-4 section-3 py-20"
+        >
           <Skills />
         </section>
-        <section className="bg-gray-900 w-full min-h-screen px-4 section-4">
+        <section
+          id="projects"
+          className=" py-20 bg-gray-900 w-full px-4 section-4"
+        >
           <FeaturedProjects />
         </section>
-        <section className="bg-gray-950 w-full min-h-screen px-4 section-5">
+        <section
+          id="contacts"
+          className=" py-20 bg-gray-950 w-full px-4  section-5 "
+        >
           <Contacts />
         </section>
       </main>
