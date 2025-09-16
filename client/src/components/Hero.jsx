@@ -98,19 +98,19 @@ const Hero = ({ badges = [] }) => {
           </div>
           <div className="flex gap-5 items-center justify-center pt-2">
             <a
-              href="#"
+              href="https://linkedin.com/in/pranshu142002"
               className="p-3 rounded-lg transition-colors duration-150 ease-linear hover:bg-gray-600/30"
             >
               <Linkedin size={15} />
             </a>
             <a
-              href="#"
+              href="https://github.com/Pranshu142"
               className="p-3 rounded-lg transition-colors duration-150 ease-linear hover:bg-gray-600/30"
             >
               <Github size={15} />
             </a>
             <a
-              href="#"
+              href="mailto:pranshu142002@gmail.com"
               className="p-3 rounded-lg transition-colors duration-150 ease-linear hover:bg-gray-600/30"
             >
               <Mail size={15} />

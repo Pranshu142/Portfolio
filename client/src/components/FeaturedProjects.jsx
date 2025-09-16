@@ -120,7 +120,9 @@ const FeaturedProjects = () => {
         <div>
           <Github />
         </div>
-        <h3>View all my projects on github</h3>
+        <a href="https://github.com/Pranshu142">
+          View all my projects on github
+        </a>
       </div>
     </div>
   );

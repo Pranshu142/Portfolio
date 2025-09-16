@@ -11,17 +11,23 @@ const Footer = () => {
           </div>
           <div className="flex gap-5 items-center justify-center md:justify-end w-full">
             <div className="p-3 hover:bg-gray-900/30 rounded-lg cursor-pointer transition-all ease-in-out">
-              <Linkedin strokeWidth={2.25} size={24} />
+              <a href="https://linkedin.com/in/pranshu142002">
+                <Linkedin strokeWidth={2.25} size={24} />
+              </a>
             </div>
             <div className="p-3 hover:bg-gray-900/30 rounded-lg cursor-pointer transition-all ease-in-out">
-              <Github strokeWidth={2.25} size={24} />
+              <a href="https://github.com/Pranshu142">
+                <Github strokeWidth={2.25} size={24} />
+              </a>
             </div>
             <div className="p-3 hover:bg-gray-900/30 rounded-lg cursor-pointer transition-all ease-in-out">
-              <Mail strokeWidth={2.25} size={24} />
+              <a href="mailto:pranshu142002@gmail.com">
+                <Mail strokeWidth={2.25} size={24} />
+              </a>
             </div>
           </div>
         </div>
-        <div className ="flex flex-col items-center md:flex-row md:justify-between w-full">
+        <div className="flex flex-col items-center md:flex-row md:justify-between w-full">
           <h3>© 2025 Pranshu Pandey. All rights reserved.</h3>
           <h3>Made with ❤️ and lots of coffee</h3>
         </div>
