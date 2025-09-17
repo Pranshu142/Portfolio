@@ -113,7 +113,7 @@ This will generate a `dist` folder with the minified files ready for deployment.
 
 I'm always open to discussing new opportunities, interesting projects, and creative ideas. Feel free to reach out if you'd like to connect\!
 
-- **LinkedIn:** `linkedin.com/in/pranshu-pandey`
+- **LinkedIn:** `www.linkedin.com/in/pranshu142002/`
 - **GitHub:** `github.com/Pranshu142`
 
 ---
