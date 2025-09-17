@@ -8,9 +8,7 @@ A modern, responsive portfolio website built with **React**, **Vite**, and **Tai
 ![A screenshot of the Pranshu Pandey Portfolio website, showing its modern and responsive design.](./images/Screenshot%202025-09-16%20202631.png)
 ![A screenshot of the Pranshu Pandey Portfolio website, showing its modern and responsive design.](./images/Screenshot%202025-09-16%20202643.png)
 
-```html
-<img src = "./images/Screenshot%202025-09-16%20202643.png">
-```
+
 
 ---
 
